@@ -1,0 +1,30 @@
+{
+  "name": "docker-compare",
+  "version": "0.0.0",
+  "description": "docker-compare compares Docker versions.",
+  "contributors": [
+    {
+      "name": "Golo Roden",
+      "email": "golo.roden@thenativeweb.io"
+    },
+    {
+      "name": "Michael Scherer",
+      "email": "mail@michael-scherer.net"
+    }
+  ],
+  "main": "dist/dockerCompare.js",
+  "dependencies": {},
+  "devDependencies": {
+    "assertthat": "0.8.5",
+    "roboter": "0.15.4",
+    "roboter-server": "0.15.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thenativeweb/docker-compare.git"
+  },
+  "keywords": [
+    "docker"
+  ],
+  "license": "MIT"
+}
