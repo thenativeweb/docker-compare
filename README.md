@@ -4,23 +4,30 @@ docker-compare compares Docker versions.
 
 ## Installation
 
-```bash
+```shell
 $ npm install docker-compare
 ```
 
 ## Quick start
 
-First you need to integrate docker-compare into your application.
+First you need to integrate docker-compare into your application:
 
 ```javascript
 const dockerCompare = require('docker-compare');
+```
+
+Then, use the `lessThan`, `lessThanOrEqual`, `equal`, `greaterThanOrEqual`, and `greaterThan` functions to compare two Docker versions:
+
+```javascript
+const isGreaterThan = dockerCompare.greaterThan('17.06-ce', '17.03-ce');
+// => true
 ```
 
 ## Running the build
 
 To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
-```bash
+```shell
 $ bot
 ```
 

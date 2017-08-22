@@ -15,7 +15,7 @@
   "main": "dist/dockerCompare.js",
   "dependencies": {},
   "devDependencies": {
-    "assertthat": "0.8.5",
+    "assertthat": "0.10.3",
     "roboter": "0.15.4",
     "roboter-server": "0.15.4"
   },
