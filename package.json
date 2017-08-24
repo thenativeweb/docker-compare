@@ -1,6 +1,6 @@
 {
   "name": "docker-compare",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "docker-compare compares Docker versions.",
   "contributors": [
     {

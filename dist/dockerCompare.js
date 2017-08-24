@@ -1,21 +1,24 @@
 'use strict';
 
 var compare = function compare(left, right) {
+  if (!left) {
+    throw new Error('Left is missing.');
+  }
+  if (!right) {
+    throw new Error('Right is missing.');
+  }
+
   var leftParts = left.split('.'),
       rightParts = right.split('.');
 
   var max = Math.max(leftParts.length, rightParts.length);
 
   for (var i = 0; i < max; i++) {
-    var leftVersion = 0,
-        rightVersion = 0;
+    var leftMatch = leftParts[i] ? leftParts[i].match(/^\d+/) : null,
+        rightMatch = rightParts[i] ? rightParts[i].match(/^\d+/) : null;
 
-    if (leftParts.length > i) {
-      leftVersion = leftParts[i];
-    }
-    if (rightParts.length > i) {
-      rightVersion = rightParts[i];
-    }
+    var leftVersion = leftMatch ? Number(leftMatch[0]) : 0,
+        rightVersion = rightMatch ? Number(rightMatch[0]) : 0;
 
     if (leftVersion > rightVersion) {
       return 1;
