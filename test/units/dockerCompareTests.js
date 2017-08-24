@@ -5,6 +5,20 @@ const assert = require('assertthat');
 const dockerCompare = require('../../lib/dockerCompare');
 
 suite('dockerCompare', () => {
+  test('throws an error if left is missing.', done => {
+    assert.that(() => {
+      dockerCompare.compare();
+    }).is.throwing('Left is missing.');
+    done();
+  });
+
+  test('throws an error if right is missing.', done => {
+    assert.that(() => {
+      dockerCompare.compare('1.0');
+    }).is.throwing('Right is missing.');
+    done();
+  });
+
   test('1.12 equals 1.12.', done => {
     assert.that(dockerCompare.compare('1.12', '1.12')).is.equalTo(0);
     done();
@@ -67,6 +81,11 @@ suite('dockerCompare', () => {
 
   test('17.03-ce is less than 17.06-ce.', done => {
     assert.that(dockerCompare.compare('17.03-ce', '17.06-ce')).is.equalTo(-1);
+    done();
+  });
+
+  test('17.03-ce is equal to 17.03-ee.', done => {
+    assert.that(dockerCompare.compare('17.03-ce', '17.03-ee')).is.equalTo(0);
     done();
   });
 });
