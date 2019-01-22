@@ -2,7 +2,7 @@
 
 const assert = require('assertthat');
 
-const dockerCompare = require('../../lib/dockerCompare');
+const dockerCompare = require('../../src/dockerCompare');
 
 suite('dockerCompare', () => {
   test('throws an error if left is missing.', done => {
